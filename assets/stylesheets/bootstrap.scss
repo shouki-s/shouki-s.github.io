@@ -1,7 +1,5 @@
 // Variable overrides first
-// $primary: #900;
-// $enable-shadows: true;
-// $prefix: "mo-";
+@import './variables.scss';
 
 // Then import Bootstrap
 @import 'bootstrap/scss/bootstrap'

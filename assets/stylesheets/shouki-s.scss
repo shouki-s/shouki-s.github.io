@@ -1,5 +1,4 @@
-$dark: #212529;
-$light: #f8f9fa;
+@import './variables.scss';
 
 body {
   animation: bgFadeOut ease both;
