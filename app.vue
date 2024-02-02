@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-fadeout">
+  <div>
     <section
       class="vw-100 vh-100 d-flex flex-column justify-content-center align-items-center"
     >
@@ -12,25 +12,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import 'bootstrap/scss/bootstrap';
-
-.bg-fadeout {
-  animation: bgFadeOut ease both;
-  // animation-timeline: view();
-  // animation-range: exit 0% exit 100%;
-  animation-timeline: scroll();
-  animation-range: 0 100vh;
-
-  @keyframes bgFadeOut {
-    from {
-      background-color: $dark;
-    }
-    to {
-      background-color: $light;
-    }
-  }
-}
 .business-card {
-  transform: scale(calc(400px / 726px));
+  transform: scale(100vw / 726px);
 }
 </style>

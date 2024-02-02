@@ -2,5 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  css: ['assets/stylesheets/bootstrap.scss'],
+  css: [
+    'assets/stylesheets/bootstrap.scss',
+    'assets/stylesheets/shouki-s.scss',
+  ],
 })

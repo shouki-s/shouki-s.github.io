@@ -1,0 +1,18 @@
+$dark: #212529;
+$light: #f8f9fa;
+
+body {
+  animation: bgFadeOut ease both;
+  animation-timeline: scroll();
+  animation-range: 0 100vh;
+
+  @keyframes bgFadeOut {
+    from {
+      background-color: $dark;
+    }
+
+    to {
+      background-color: $light;
+    }
+  }
+}
