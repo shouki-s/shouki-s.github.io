@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
 
 .bg-fadeout {
   animation: bgFadeOut ease both;

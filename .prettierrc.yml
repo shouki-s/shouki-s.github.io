@@ -1,3 +1,4 @@
 semi: false
 trailingComma: all
 vueIndentScriptAndStyle: false
+singleQuote: true
