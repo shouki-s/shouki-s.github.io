@@ -1,5 +1,5 @@
 <template>
-  <div class="card" style="width: 726px; height: 438px">
+  <div class="card" :style="scaleStyle" :class="{ show }">
     <img src="assets/images/kanagawaoki.png" class="card-img-top" />
     <div class="card-body d-flex flex-column justify-content-between">
       <span class="job-title">
@@ -16,9 +16,43 @@
   </div>
 </template>
 
-<style lang="ts"></style>
+<script lang="ts" setup>
+import { ref, onMounted, onBeforeUnmount, computed, nextTick } from 'vue'
+
+const show = ref(false)
+const scale = ref(0.1)
+
+const scaleStyle = computed(() => {
+  return `transform: scale(${scale.value})`
+})
+
+onMounted(async () => {
+  scale.value = getDesiredScale()
+  console.log(`The initial count is ${scale.value}.`)
+  window.addEventListener('resize', getDesiredScale)
+  await nextTick()
+  show.value = true
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', getDesiredScale)
+})
+
+/** 横幅を拡縮するためのスケールを計算する */
+function getDesiredScale(): number {
+  return Math.min(window.innerWidth * 0.95, 363) / 726
+}
+</script>
 
 <style lang="scss" scoped>
+.card {
+  width: 726px;
+  height: 438px;
+  visibility: hidden;
+  &.show {
+    visibility: visible;
+  }
+}
 .card-img-top {
   border-bottom: 16px solid #23334a;
 }
