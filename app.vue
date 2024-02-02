@@ -9,6 +9,9 @@
       <NavBar />
       <h2>坂本鐘期について</h2>
     </section>
+    <footer class="bg-body-secondary" style="height: 10em">
+      &copy; Shouki SAKAMOTO.
+    </footer>
   </div>
 </template>
 
