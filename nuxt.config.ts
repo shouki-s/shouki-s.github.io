@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 
   css: [
     'assets/stylesheets/bootstrap.scss',
+    'animate.css',
     'assets/stylesheets/shouki-s.scss',
   ],
 })

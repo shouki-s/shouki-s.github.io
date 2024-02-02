@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :style="scaleStyle" :class="{ show }">
+  <div class="card animate__animated animate__fadeInDown" :style="scaleStyle">
     <img src="assets/images/kanagawaoki.png" class="card-img-top" />
     <div class="card-body d-flex flex-column justify-content-between">
       <span class="job-title">
@@ -17,21 +17,18 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount, computed, nextTick } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 
-const show = ref(false)
-const scale = ref(0.1)
+const scale = ref(0.00001)
 
 const scaleStyle = computed(() => {
-  return `transform: scale(${scale.value})`
+  return `scale: ${scale.value}`
 })
 
-onMounted(async () => {
+onMounted(() => {
   scale.value = getDesiredScale()
   console.log(`The initial count is ${scale.value}.`)
   window.addEventListener('resize', getDesiredScale)
-  await nextTick()
-  show.value = true
 })
 
 onBeforeUnmount(() => {
@@ -48,10 +45,6 @@ function getDesiredScale(): number {
 .card {
   width: 726px;
   height: 438px;
-  visibility: hidden;
-  &.show {
-    visibility: visible;
-  }
 }
 .card-img-top {
   border-bottom: 16px solid #23334a;
