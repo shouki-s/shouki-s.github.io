@@ -55,3 +55,22 @@
     </div>
   </nav>
 </template>
+
+<style lang="scss" scoped>
+@import '~/assets/stylesheets/variables.scss';
+
+.navbar {
+  animation: fadeIn ease both;
+  animation-timeline: scroll();
+  animation-range: 80vh 100vh;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+</style>
