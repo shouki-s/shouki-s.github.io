@@ -1,0 +1,17 @@
+root: true
+env:
+  browser: true
+  node: true
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:vue/vue3-recommended
+  - plugin:prettier/recommended
+plugins: []
+
+rules: {}
+
+overrides:
+  - files: ["*.ts", "*.js", "*.vue"]
+    rules:
+      "@typescript-eslint/explicit-function-return-type": error
