@@ -1,12 +1,18 @@
 {
   "name": "shouki-s.github.io",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
   "author": "",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "main": "index.js"
+  "devDependencies": {
+    "nuxt": "^3.10.0",
+    "vue": "^3.4.15",
+    "vue-router": "^4.2.5"
+  }
 }
