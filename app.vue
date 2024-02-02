@@ -5,7 +5,8 @@
     >
       <BusinessCard />
     </section>
-    <section class="container min-vh-100">
+    <section class="min-vh-100">
+      <NavBar />
       <h2>坂本鐘期について</h2>
     </section>
   </div>
