@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
