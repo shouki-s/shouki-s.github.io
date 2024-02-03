@@ -65,7 +65,7 @@
 .navbar {
   animation: fadeIn ease both;
   animation-timeline: scroll();
-  animation-range: 80vh 100vh;
+  animation-range: 50vh 100vh;
 
   @keyframes fadeIn {
     from {
