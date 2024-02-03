@@ -19,7 +19,8 @@ extends:
 plugins:
   - vue
 
-rules: {}
+rules:
+  sort-imports: error
 
 overrides:
   - files: ["*.ts", "*.js", "*.vue"]
