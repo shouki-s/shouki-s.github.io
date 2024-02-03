@@ -1,5 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <nav
+    class="navbar navbar-expand-lg bg-primary sticky-top"
+    data-bs-theme="dark"
+  >
     <div class="container">
       <a class="navbar-brand" href="#">Navbar</a>
       <button

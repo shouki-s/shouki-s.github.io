@@ -42,12 +42,14 @@ function getDesiredScale(): number {
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/stylesheets/variables.scss';
+
 .card {
   width: 726px;
   height: 438px;
 }
 .card-img-top {
-  border-bottom: 16px solid #23334a;
+  border-bottom: 16px solid $primary;
 }
 .card-body {
   padding: 38px 38px 30px 38px;
