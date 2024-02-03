@@ -7,11 +7,11 @@
       <a class="navbar-brand" href="#">
         <img
           src="assets/images/avatar.jpeg"
-          alt="Bootstrap"
-          class="border border-2 border-secondary rounded-circle"
-          width="32"
-          height="32"
+          class="border border-secondary rounded-circle"
+          width="30"
+          height="30"
         />
+        坂本 鐘期
       </a>
       <button
         class="navbar-toggler"
@@ -53,15 +53,6 @@
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -83,5 +74,12 @@
       opacity: 1;
     }
   }
+}
+.navbar-brand {
+  display: inline-flex;
+  vertical-align: baseline;
+  gap: 0.4em;
+  font-family: serif;
+  font-weight: bolder;
 }
 </style>
