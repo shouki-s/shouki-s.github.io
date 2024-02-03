@@ -4,7 +4,15 @@
     data-bs-theme="dark"
   >
     <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">
+        <img
+          src="assets/images/avatar.jpeg"
+          alt="Bootstrap"
+          class="border border-2 border-secondary rounded-circle"
+          width="32"
+          height="32"
+        />
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -65,7 +73,7 @@
 .navbar {
   animation: fadeIn ease both;
   animation-timeline: scroll();
-  animation-range: 50vh 100vh;
+  animation-range: 90vh 100vh;
 
   @keyframes fadeIn {
     from {
