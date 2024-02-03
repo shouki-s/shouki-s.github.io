@@ -34,7 +34,7 @@
 
   animation: fadeIn ease both;
   animation-timeline: scroll();
-  animation-range: 0 100dvh;
+  animation-range: 0 50dvh;
 
   @keyframes fadeIn {
     from {
