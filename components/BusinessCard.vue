@@ -1,5 +1,8 @@
 <template>
-  <div class="card animate__animated animate__fadeInDown" :style="scaleStyle">
+  <div
+    class="card shadow animate__animated animate__fadeInDown"
+    :style="scaleStyle"
+  >
     <img src="assets/images/kanagawaoki.png" class="card-img-top" />
     <div class="card-body d-flex flex-column justify-content-between">
       <span class="job-title">
