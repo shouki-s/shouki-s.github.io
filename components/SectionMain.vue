@@ -9,18 +9,60 @@
         1984年生まれ、{{ age }}歳。<br />
         フリーランス［システムエンジニア／プログラマー］。
       </p>
+      <p class="links d-flex gap-1">
+        <a
+          class="btn btn-light p-1"
+          href="https://www.linkedin.com/in/shoukisakamoto/"
+          role="button"
+          title="LinkedIn"
+        >
+          <img
+            src="assets/images/icons/linkedin.png"
+            width="32"
+            height="32"
+            alt="LinkedIn"
+          />
+        </a>
+        <a
+          class="btn btn-light rounded-circle p-1"
+          href="https://github.com/shouki-s"
+          role="button"
+          title="Github"
+        >
+          <img
+            src="assets/images/icons/github.png"
+            width="32"
+            height="32"
+            alt="GitHub"
+          />
+        </a>
+        <a
+          class="btn btn-light rounded-circle p-1"
+          href="https://qiita.com/shouki-s"
+          role="button"
+          title="Qiita"
+        >
+          <img
+            src="assets/images/icons/qiita.png"
+            width="32"
+            height="32"
+            alt="Qiita"
+          />
+        </a>
+      </p>
       <h2>来歴</h2>
       <ul>
         <li>インターネット黎明期にコンピューターオタクとして育つ。</li>
         <li>
-          大学は情報科学以外の知識も幅広く学びたかったため哲学を専攻（知識科学や論理学などの派生元としての近現代哲学が主）。
+          大学は情報科学以外の知識も幅広く学びたかったため哲学を専攻。<br />
+          知識科学や論理学などの派生元としての近現代哲学がメイン。
         </li>
         <li>大学院では情報科学に戻り、ルールベースの人工知能を研究。</li>
         <li>卒業後、メーカー系システムインテグレーターに就職。14年間勤務。</li>
         <li>
-          プロジェクトマネージャーよりエンジニアとして多彩な仕事・システム・プログラミング言語に触れたかったため、2023年に独立。<br />
-          フリーのシステムエンジニア／プログラマーになり今に至る。
+          プロジェクトマネージャーよりエンジニアとして多彩な仕事・システム・プログラミング言語に触れたかったため、2023年に独立。
         </li>
+        <li>フリーのシステムエンジニア／プログラマーになり今に至る。</li>
       </ul>
       <h2>スキル</h2>
       <h2>資格</h2>
