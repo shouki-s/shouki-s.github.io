@@ -53,6 +53,17 @@
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
         </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              href="https://github.com/shouki-s/shouki-s.github.io"
+              class="nav-link"
+              aria-label="shouki-s/shouki-s.github.io"
+            >
+              <i class="bi bi-github" />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
