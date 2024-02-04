@@ -15,6 +15,7 @@
           href="https://www.linkedin.com/in/shoukisakamoto/"
           role="button"
           title="LinkedIn"
+          aria-label="LinkedIn"
         >
           <img
             src="assets/images/icons/linkedin.png"
@@ -28,6 +29,7 @@
           href="https://github.com/shouki-s"
           role="button"
           title="Github"
+          aria-label="Github"
         >
           <img
             src="assets/images/icons/github.png"
@@ -41,6 +43,7 @@
           href="https://qiita.com/shouki-s"
           role="button"
           title="Qiita"
+          aria-label="Qiita"
         >
           <img
             src="assets/images/icons/qiita.png"
