@@ -1,5 +1,4 @@
 <template>
-  <GithubCorner />
   <SectionTop />
   <SectionMain />
   <SectionFooter />

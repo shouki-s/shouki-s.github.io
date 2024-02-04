@@ -33,7 +33,6 @@
   top: 0;
   border: 0;
   right: 0;
-  z-index: 30;
 }
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;

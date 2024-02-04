@@ -2,6 +2,7 @@
   <section
     class="bc-section d-flex flex-column justify-content-center align-items-center position-relative"
   >
+    <GithubCorner />
     <div
       class="button-next-wrapper animate__animated animate__fadeIn animate__delay-2s"
     >
