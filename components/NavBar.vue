@@ -57,6 +57,7 @@
           <li class="nav-item">
             <a
               href="https://github.com/shouki-s/shouki-s.github.io"
+              role="button"
               class="nav-link"
               aria-label="shouki-s/shouki-s.github.io"
             >
