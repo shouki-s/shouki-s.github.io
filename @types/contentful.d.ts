@@ -10,3 +10,5 @@ type SkillSkeleton = {
     comment?: EntryFieldTypes.Text
   }
 }
+
+type SkillEntry = Entry<SkillSkeleton, undefined, string>

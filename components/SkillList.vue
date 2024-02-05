@@ -32,35 +32,17 @@
 </template>
 
 <script setup lang="ts">
-import * as contentful from 'contentful'
-import { type Entry } from 'contentful'
-import type { SkillSkeleton } from '~/@types/contentful'
-
-const runtimeConfig = useRuntimeConfig().public
-const contentfulClient = contentful.createClient({
-  space: runtimeConfig.contentfulSpaceId,
-  environment: runtimeConfig.contentfulEnvironment,
-  accessToken: runtimeConfig.contentfulApikey,
-})
+import type { SkillEntry } from '~/@types/contentful'
 
 const props = defineProps<{
   genre: string
 }>()
 
-const skills = ref([] as Entry<SkillSkeleton, undefined, string>[])
+const skills = ref([] as SkillEntry[])
 
-onMounted(() => {
-  loadSkills(props.genre)
+onMounted(async () => {
+  skills.value = await fetchSkills(props.genre)
 })
-
-async function loadSkills(genre: string): Promise<void> {
-  const { items } = await contentfulClient.getEntries<SkillSkeleton>({
-    content_type: 'skill',
-    'fields.genre': genre,
-    order: ['-fields.rate'],
-  })
-  skills.value = items
-}
 </script>
 
 <style lang="scss" scoped>
