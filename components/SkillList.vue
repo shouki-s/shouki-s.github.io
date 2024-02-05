@@ -23,7 +23,21 @@
           />
         </td>
         <td v-if="fields.monthsOfExperience !== 0" class="exp">
-          {{ fields.monthsOfExperience }}ヶ月
+          <div class="small">{{ fields.monthsOfExperience }}ヶ月</div>
+          <div
+            class="progress"
+            role="progressbar"
+            :aria-label="fields.name"
+            :aria-valuenow="(fields.monthsOfExperience * 100) / maxMonths"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="height: 1px"
+          >
+            <div
+              class="progress-bar"
+              :style="`width: ${(fields.monthsOfExperience * 100) / maxMonths}%`"
+            ></div>
+          </div>
         </td>
         <td v-else class="exp">習得中...</td>
       </tr>
@@ -36,6 +50,7 @@ import type { SkillEntry } from '~/@types/contentful'
 
 const props = defineProps<{
   genre: string
+  maxMonths: number
 }>()
 
 const skills = ref([] as SkillEntry[])

@@ -16,3 +16,12 @@ export async function fetchSkills(genre: string): Promise<SkillEntry[]> {
   })
   return items
 }
+
+export async function getMaxMonthsOfSkillsExp(): Promise<number> {
+  const { items } = await contentfulClient.getEntries<SkillSkeleton>({
+    content_type: 'skill',
+    order: ['-fields.monthsOfExperience'],
+    limit: 1,
+  })
+  return items[0]?.fields.monthsOfExperience || 100
+}
