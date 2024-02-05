@@ -5,8 +5,8 @@ type SkillSkeleton = {
   fields: {
     name: EntryFieldTypes.Text
     genre: EntryFieldTypes.Text
-    rate: EntryFieldTypes.Integer
+    rate?: EntryFieldTypes.Integer
     monthsOfExperience: EntryFieldTypes.Integer
-    comment: EntryFieldTypes.Text
+    comment?: EntryFieldTypes.Text
   }
 }
