@@ -69,7 +69,7 @@
       <h2>スキル</h2>
       <p>技術オタクなので新しい言語やFWを触るのは大好きです。</p>
       <p>
-        得意なのはクラウドネイティブのWebアプリケーション開発です。フルスタックで対応できます！
+        何でもやりますが、最近はWebアプリケーション開発を中心に活動しています。
       </p>
       <div class="row row-cols-1 row-cols-lg-2">
         <div>
@@ -99,6 +99,13 @@
         <li>データベーススペシャリスト試験</li>
         <li>AWS Developer Associate</li>
         <li>AWS Solution Architect Associate （失効済み）</li>
+      </ul>
+      <h2>趣味</h2>
+      <ul>
+        <li>ゲーム（特にボードゲームやテーブルトークRPG）</li>
+        <li>もの作り、D.I.Y.</li>
+        <li>枯山水巡り</li>
+        <li>そしてプログラミング</li>
       </ul>
       <h2>このサイトについて</h2>
       <ul>
