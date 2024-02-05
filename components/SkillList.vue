@@ -68,5 +68,6 @@ onMounted(async () => {
 }
 .exp {
   vertical-align: middle;
+  width: 30%;
 }
 </style>

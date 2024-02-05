@@ -76,14 +76,18 @@
           <h3>フレームワーク</h3>
           <LazySkillList genre="framework" :max-months="maxMonths" />
         </div>
-        <!-- <div>
-          <h3>フロントエンド</h3>
-          <LazySkillList genre="frontend" :max-months="maxMonths" />
+        <div>
+          <h3>OS/クラウド</h3>
+          <LazySkillList genre="os" :max-months="maxMonths" />
         </div>
         <div>
           <h3>開発ツール</h3>
           <LazySkillList genre="tool" :max-months="maxMonths" />
-        </div> -->
+        </div>
+        <div>
+          <h3>開発プロセス</h3>
+          <LazySkillList genre="process" :max-months="maxMonths" />
+        </div>
       </div>
       <h2>資格</h2>
       <ul>
@@ -114,7 +118,7 @@ h2 {
   padding-top: 3em;
 }
 h3 {
-  padding-top: 1.5em;
+  padding-top: 2em;
 }
 
 .text-section {
