@@ -67,7 +67,11 @@
         <li>フリーのシステムエンジニア／プログラマーになり今に至る。</li>
       </ul>
       <h2>スキル</h2>
-      <div class="row row-cols-1 row-cols-md-2">
+      <p>技術オタクなので新しい言語やFWを触るのは大好きです。</p>
+      <p>
+        得意なのはクラウドネイティブのWebアプリケーション開発です。フルスタックで対応できます！
+      </p>
+      <div class="row row-cols-1 row-cols-lg-2">
         <div>
           <h3>プログラミング言語</h3>
           <LazySkillList genre="language" :max-months="maxMonths" />
@@ -116,6 +120,7 @@ onMounted(async () => {
 <style lang="scss" scoped>
 h2 {
   padding-top: 3em;
+  padding-bottom: 0.5em;
 }
 h3 {
   padding-top: 2em;
