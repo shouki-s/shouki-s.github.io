@@ -8,4 +8,12 @@ export default defineNuxtConfig({
     'animate.css',
     'assets/stylesheets/shouki-s.scss',
   ],
+
+  runtimeConfig: {
+    public: {
+      contentfulSpaceId: '',
+      contentfulEnvironment: '',
+      contentfulApikey: '',
+    },
+  },
 })
