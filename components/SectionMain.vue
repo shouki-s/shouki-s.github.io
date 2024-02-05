@@ -86,6 +86,8 @@
 
 <script setup lang="ts">
 import * as contentful from 'contentful'
+import { type Entry } from 'contentful'
+import type { SkillSkeleton } from '~/@types/contentful'
 import moment from 'moment'
 
 const runtimeConfig = useRuntimeConfig().public
@@ -97,16 +99,16 @@ const contentfulClient = contentful.createClient({
 
 const diff = moment().diff(moment('1984-297T00:00:00+09:00'))
 const age = ref(moment.duration(diff).years())
-const skills = ref([] as any[])
+const skills = ref([] as Entry<SkillSkeleton, undefined, string>[])
 
 onMounted(() => {
   loadSkills()
 })
 
 async function loadSkills(): Promise<void> {
-  const { items } = await contentfulClient.getEntries({
+  const { items } = await contentfulClient.getEntries<SkillSkeleton>({
     content_type: 'skill',
-    order: '-fields.rate',
+    order: ['-fields.rate'],
   })
   console.log(items)
   skills.value = items
