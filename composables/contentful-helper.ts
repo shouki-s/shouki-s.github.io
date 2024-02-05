@@ -1,5 +1,10 @@
 import * as contentful from 'contentful'
-import type { SkillEntry, SkillSkeleton } from '~/@types/contentful'
+import type {
+  SkillEntry,
+  SkillSkeleton,
+  WorkEntry,
+  WorkSkeleton,
+} from '~/@types/contentful'
 
 function getContentfulClient(): contentful.ContentfulClientApi<undefined> {
   const runtimeConfig = useRuntimeConfig().public
@@ -29,4 +34,13 @@ export async function getMaxMonthsOfSkillsExp(): Promise<number> {
     limit: 1,
   })
   return items[0]?.fields.monthsOfExperience || 100
+}
+
+export async function fetchWorks(): Promise<WorkEntry[]> {
+  const contentfulClient = getContentfulClient()
+  const { items } = await contentfulClient.getEntries<WorkSkeleton>({
+    content_type: 'work',
+    order: ['-fields.endDate'],
+  })
+  return items
 }

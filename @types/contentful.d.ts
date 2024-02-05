@@ -12,3 +12,15 @@ type SkillSkeleton = {
 }
 
 type SkillEntry = Entry<SkillSkeleton, undefined, string>
+
+type WorkSkeleton = {
+  contentTypeId: 'work'
+  fields: {
+    name: EntryFieldTypes.Text
+    startDate: EntryFieldTypes.Date
+    endDate: EntryFieldTypes.Date
+    description?: EntryFieldTypes.Text
+  }
+}
+
+type WorkEntry = Entry<WorkSkeleton, undefined, string>
