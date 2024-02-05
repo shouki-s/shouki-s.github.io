@@ -100,7 +100,12 @@
         <li>AWS Developer Associate</li>
         <li>AWS Solution Architect Associate （失効済み）</li>
       </ul>
-      <h2>連絡先</h2>
+      <h2>このサイトについて</h2>
+      <ul>
+        <li>Vue.js(v3) + Nuxt.js(v3)</li>
+        <li>Contentful APIでデータを取得したり</li>
+        <li>ちょっと楽しくなって、animationとかtransitionとか使ったり</li>
+      </ul>
     </div>
   </main>
 </template>
