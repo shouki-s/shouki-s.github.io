@@ -20,8 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-
 const scale = ref(0.00001)
 
 const scaleStyle = computed(() => {

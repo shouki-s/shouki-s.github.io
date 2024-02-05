@@ -81,7 +81,7 @@
 
 <script setup lang="ts">
 import moment from 'moment'
-import { ref } from 'vue'
+
 
 const diff = moment().diff(moment('1984-297T00:00:00+09:00'))
 const age = ref(moment.duration(diff).years())
