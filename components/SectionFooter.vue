@@ -8,6 +8,8 @@
 
 <style lang="scss" scoped>
 footer {
-  height: 4em;
+  margin-top: 50dvh;
+  height: 8rem;
+  font-size: small;
 }
 </style>

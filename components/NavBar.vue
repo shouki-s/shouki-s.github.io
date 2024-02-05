@@ -27,41 +27,32 @@
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown
+            <a class="nav-link" aria-current="page" href="#profile">
+              プロフィール
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link" aria-current="page" href="#career">来歴</a>
           </li>
-        </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a
-              href="https://github.com/shouki-s/shouki-s.github.io"
-              role="button"
-              class="nav-link"
-              aria-label="shouki-s/shouki-s.github.io"
-            >
-              <i class="bi bi-github" />
+            <a class="nav-link" aria-current="page" href="#work-experience">
+              経験
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#skills">スキル</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#qualification">
+              資格
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#hobby">趣味</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#about-site">
+              このサイトについて
             </a>
           </li>
         </ul>

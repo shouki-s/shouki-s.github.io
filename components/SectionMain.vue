@@ -53,7 +53,7 @@
           />
         </a>
       </p>
-      <h2>来歴</h2>
+      <h2 id="career">来歴</h2>
       <ul>
         <li>インターネット黎明期にコンピューターオタクとして育つ。</li>
         <li>
@@ -66,9 +66,9 @@
         </li>
         <li>フリーのシステムエンジニア／プログラマーになり今に至る。</li>
       </ul>
-      <h2>経験</h2>
+      <h2 id="work-experience">経験</h2>
       <WorkExperience />
-      <h2>スキル</h2>
+      <h2 id="skills">スキル</h2>
       <p>技術オタクなので新しい言語やFWを触るのは大好きです。</p>
       <p>
         何でもやりますが、最近はWebアプリケーション開発を中心に活動しています。
@@ -95,21 +95,21 @@
           <LazySkillList genre="process" :max-months="maxMonths" />
         </div>
       </div>
-      <h2>資格</h2>
+      <h2 id="qualification">資格</h2>
       <ul>
         <li>応用情報技術者試験</li>
         <li>データベーススペシャリスト試験</li>
         <li>AWS Developer Associate</li>
         <li>AWS Solution Architect Associate （失効済み）</li>
       </ul>
-      <h2>趣味</h2>
+      <h2 id="hobby">趣味</h2>
       <ul>
         <li>ゲーム（特にボードゲームやテーブルトークRPG）</li>
         <li>もの作り、D.I.Y.</li>
         <li>枯山水巡り</li>
         <li>そしてプログラミング</li>
       </ul>
-      <h2>このサイトについて</h2>
+      <h2 id="about-site">このサイトについて</h2>
       <ul>
         <li>Vue.js(v3) + Nuxt.js(v3)</li>
         <li>Contentful APIでデータを取得したり</li>
