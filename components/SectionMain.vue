@@ -67,6 +67,11 @@
         <li>フリーのシステムエンジニア／プログラマーになり今に至る。</li>
       </ul>
       <h2>スキル</h2>
+      <ul>
+        <li v-for="skill in skills" :key="skill.sys.id">
+          {{ skill.fields.name }}
+        </li>
+      </ul>
       <h2>資格</h2>
       <ul>
         <li>応用情報技術者試験</li>
@@ -80,11 +85,32 @@
 </template>
 
 <script setup lang="ts">
+import * as contentful from 'contentful'
 import moment from 'moment'
 
+const runtimeConfig = useRuntimeConfig().public
+const contentfulClient = contentful.createClient({
+  space: runtimeConfig.contentfulSpaceId,
+  environment: runtimeConfig.contentfulEnvironment,
+  accessToken: runtimeConfig.contentfulApikey,
+})
 
 const diff = moment().diff(moment('1984-297T00:00:00+09:00'))
 const age = ref(moment.duration(diff).years())
+const skills = ref([] as any[])
+
+onMounted(() => {
+  loadSkills()
+})
+
+async function loadSkills(): Promise<void> {
+  const { items } = await contentfulClient.getEntries({
+    content_type: 'skill',
+    order: '-fields.rate',
+  })
+  console.log(items)
+  skills.value = items
+}
 </script>
 
 <style lang="scss" scoped>
