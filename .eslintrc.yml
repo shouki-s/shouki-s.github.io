@@ -4,25 +4,15 @@ env:
   node: true
   vue/setup-compiler-macros: true
 
-parser: 'vue-eslint-parser'
-
-parserOptions:
-  parser: '@typescript-eslint/parser'
-  sourceType: module
-
 extends:
   - eslint:recommended
-  - plugin:@typescript-eslint/recommended
-  - plugin:vue/vue3-recommended
+  - '@nuxt/eslint-config'
   - plugin:prettier/recommended
-
-plugins:
-  - vue
 
 rules:
   sort-imports: error
 
 overrides:
-  - files: ["*.ts", "*.js", "*.vue"]
+  - files: ["*.ts", "*.vue"]
     rules:
       "@typescript-eslint/explicit-function-return-type": error
