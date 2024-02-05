@@ -110,7 +110,6 @@ async function loadSkills(): Promise<void> {
     content_type: 'skill',
     order: ['-fields.rate'],
   })
-  console.log(items)
   skills.value = items
 }
 </script>
