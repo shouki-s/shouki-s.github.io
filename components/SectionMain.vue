@@ -68,7 +68,7 @@
       </ul>
       <h2>スキル</h2>
       <h3>プログラミング言語</h3>
-      <LazySkillList />
+      <LazySkillList genre="language" />
       <h2>資格</h2>
       <ul>
         <li>応用情報技術者試験</li>

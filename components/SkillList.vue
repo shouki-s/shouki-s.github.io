@@ -18,6 +18,10 @@ const contentfulClient = contentful.createClient({
   accessToken: runtimeConfig.contentfulApikey,
 })
 
+const props = defineProps<{
+  genre: string
+}>()
+
 const skills = ref([] as Entry<SkillSkeleton, undefined, string>[])
 
 onMounted(() => {
@@ -27,6 +31,7 @@ onMounted(() => {
 async function loadSkills(): Promise<void> {
   const { items } = await contentfulClient.getEntries<SkillSkeleton>({
     content_type: 'skill',
+    'fields.genre': props.genre,
     order: ['-fields.rate'],
   })
   skills.value = items
