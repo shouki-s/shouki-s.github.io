@@ -21,6 +21,7 @@ export async function fetchSkills(genre: string): Promise<SkillEntry[]> {
   const { items } = await contentfulClient.getEntries<SkillSkeleton>({
     content_type: 'skill',
     'fields.genre': genre,
+    'fields.showInSkillList': true,
     order: ['-fields.rate'],
   })
   return items

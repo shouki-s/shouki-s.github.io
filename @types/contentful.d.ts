@@ -8,6 +8,7 @@ type SkillSkeleton = {
     rate?: EntryFieldTypes.Integer
     monthsOfExperience: EntryFieldTypes.Integer
     comment?: EntryFieldTypes.Text
+    showInSkillList: EntryFieldTypes.Boolean
   }
 }
 
