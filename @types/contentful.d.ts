@@ -20,6 +20,7 @@ type WorkSkeleton = {
     startDate: EntryFieldTypes.Date
     endDate: EntryFieldTypes.Date
     description?: EntryFieldTypes.Text
+    skills: EntryFieldTypes.Array<SkillEntry>
   }
 }
 
