@@ -1,19 +1,21 @@
 <template>
-  <div v-for="{ fields, sys } in works" :key="sys.id">
-    <h3>
-      {{ fields.name }} （{{ getYears(fields.startDate, fields.endDate) }}）
-    </h3>
-    <!-- eslint-disable-next-line vue/no-v-html -->
-    <div v-html="mdToHtml(fields.description)" />
-    <div class="d-flex flex-wrap gap-2">
-      <span
-        v-for="skill in fields.skills"
-        :key="skill.sys.id"
-        class="badge"
-        :class="skill.fields.genre"
-      >
-        {{ skill.fields.name }}
-      </span>
+  <div>
+    <div v-for="{ fields, sys } in works" :key="sys.id">
+      <h3>
+        {{ fields.name }} （{{ getYears(fields.startDate, fields.endDate) }}）
+      </h3>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-html="mdToHtml(fields.description)" />
+      <div class="d-flex flex-wrap gap-2">
+        <span
+          v-for="skill in fields.skills"
+          :key="skill.sys.id"
+          class="badge"
+          :class="skill.fields.genre"
+        >
+          {{ skill.fields.name }}
+        </span>
+      </div>
     </div>
   </div>
 </template>
