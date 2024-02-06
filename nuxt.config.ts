@@ -21,7 +21,13 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      meta: [{ name: 'robots', content: 'noindex,nofollow,noarchive' }],
+      title: '坂本 鐘期',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'robots', content: 'noindex,nofollow,noarchive' },
+        { name: 'description', content: '坂本 鐘期のポートフォリオ' },
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
 })
