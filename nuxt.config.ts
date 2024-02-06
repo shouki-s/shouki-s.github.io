@@ -19,6 +19,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: { lang: 'ja' },
       title: '坂本鐘期 Portfolio',
       meta: [
         { charset: 'utf-8' },
