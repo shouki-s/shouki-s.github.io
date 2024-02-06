@@ -17,6 +17,9 @@ dependencies:
   contentful:
     specifier: ^10.6.21
     version: 10.6.21
+  marked:
+    specifier: ^12.0.0
+    version: 12.0.0
   moment:
     specifier: ^2.30.1
     version: 2.30.1
@@ -4805,6 +4808,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /marked@12.0.0:
+    resolution: {integrity: sha512-Vkwtq9rLqXryZnWaQc86+FHLC6tr/fycMfYAhiOIXkrNmeGAyhSxjqu0Rs1i0bBqw5u0S7+lV9fdH2ZSVaoa0w==}
+    engines: {node: '>= 18'}
+    hasBin: true
+    dev: false
 
   /mdn-data@2.0.28:
     resolution: {integrity: sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==}

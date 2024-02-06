@@ -155,13 +155,6 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  padding-top: 3em;
-  padding-bottom: 0.5em;
-}
-h3 {
-  padding-top: 2em;
-}
 .text-section {
   min-height: 100dvh;
 }
