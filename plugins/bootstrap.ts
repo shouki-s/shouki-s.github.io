@@ -1,4 +1,4 @@
-import 'bootstrap/dist/js/bootstrap'
+import 'bootstrap'
 
 export default defineNuxtPlugin(() => {
   // Do nothing
