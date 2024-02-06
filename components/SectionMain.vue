@@ -88,23 +88,23 @@
         <div class="row row-cols-1 row-cols-lg-2">
           <div>
             <h3>プログラミング言語</h3>
-            <LazySkillList genre="language" :max-months="maxMonths" />
+            <SkillList genre="language" :max-months="maxMonths" />
           </div>
           <div>
             <h3>フレームワーク</h3>
-            <LazySkillList genre="framework" :max-months="maxMonths" />
+            <SkillList genre="framework" :max-months="maxMonths" />
           </div>
           <div>
             <h3>OS/クラウド</h3>
-            <LazySkillList genre="os" :max-months="maxMonths" />
+            <SkillList genre="os" :max-months="maxMonths" />
           </div>
           <div>
             <h3>開発ツール</h3>
-            <LazySkillList genre="tool" :max-months="maxMonths" />
+            <SkillList genre="tool" :max-months="maxMonths" />
           </div>
           <div>
             <h3>開発プロセス</h3>
-            <LazySkillList genre="process" :max-months="maxMonths" />
+            <SkillList genre="process" :max-months="maxMonths" />
           </div>
         </div>
       </section>

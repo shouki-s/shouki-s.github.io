@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
 
-  modules: ['nuxt-gtag'],
+  modules: ['nuxt-gtag', '@vueuse/nuxt'],
 
   css: [
     'assets/stylesheets/bootstrap.scss',

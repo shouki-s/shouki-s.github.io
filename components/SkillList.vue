@@ -1,5 +1,5 @@
 <template>
-  <table class="table table-striped">
+  <table v-intersection-observer="onIntersection" class="table table-striped">
     <thead>
       <tr>
         <th scope="col" />
@@ -7,7 +7,29 @@
         <th scope="col">経験期間</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody v-if="loading">
+      <!-- placeholder -->
+      <tr v-for="len in [7, 4, 5, 9, 6]" :key="len">
+        <th scope="row"><span :class="`placeholder col-${len}`"></span></th>
+        <td class="rating text-center">
+          <i v-for="i in 5" :key="i" class="bi bi-star" />
+        </td>
+        <td class="exp">
+          <div class="small"><span class="placeholder col-7"></span></div>
+          <div
+            class="progress"
+            role="progressbar"
+            aria-valuenow="1"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="height: 1px"
+          >
+            <div class="progress-bar" :style="`width: 1%`"></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tbody v-else>
       <tr v-for="{ fields, sys } in skills" :key="sys.id">
         <th scope="row">{{ fields.name }}</th>
         <td class="rating text-center">
@@ -47,17 +69,35 @@
 
 <script setup lang="ts">
 import type { SkillEntry } from '~/@types/contentful'
+import sleep from 'sleep-promise'
+import { vIntersectionObserver } from '@vueuse/components'
 
 const props = defineProps<{
   genre: string
   maxMonths: number
 }>()
 
-const skills = ref([] as SkillEntry[])
+const skills: Ref<SkillEntry[]> = ref([])
+const intersected = ref(false)
+const loading = ref(true)
 
-onMounted(async () => {
-  skills.value = await fetchSkills(props.genre)
-})
+// ローディングを見えたいので画面に入ってからfetch開始
+async function onIntersection([
+  { isIntersecting },
+]: IntersectionObserverEntry[]): Promise<void> {
+  if (!isIntersecting || intersected.value) {
+    return
+  }
+  intersected.value = true
+
+  loading.value = true
+  try {
+    await sleep(200) // ローディングを見せたいのであえてスリープ
+    skills.value = await fetchSkills(props.genre)
+  } finally {
+    loading.value = false
+  }
+}
 </script>
 
 <style lang="scss" scoped>
