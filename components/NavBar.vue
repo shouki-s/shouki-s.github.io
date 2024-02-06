@@ -25,7 +25,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul
+          v-scroll-spy-active="{ selector: 'a.nav-link', class: 'active' }"
+          class="navbar-nav me-auto mb-2 mb-lg-0"
+        >
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#profile">
               プロフィール
