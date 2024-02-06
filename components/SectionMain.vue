@@ -143,10 +143,9 @@
 </template>
 
 <script setup lang="ts">
-import moment from 'moment'
+import dayjs from 'dayjs'
 
-const diff = moment().diff(moment('1984-297T00:00:00+09:00'))
-const age = ref(moment.duration(diff).years())
+const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
 const maxMonths = ref(100)
 
 onMounted(async () => {

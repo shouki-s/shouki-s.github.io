@@ -20,19 +20,18 @@
 
 <script setup lang="ts">
 import type { WorkEntry } from '~/@types/contentful'
+import dayjs from 'dayjs'
 import { marked } from 'marked'
-import moment from 'moment'
 
 const works = ref([]) as Ref<WorkEntry[]>
 
 onMounted(async () => {
   works.value = await fetchWorks()
-  console.log(works.value)
 })
 
 function getYears(startDate: string, endDate: string): string {
-  const start = moment(startDate).year()
-  const end = moment(endDate).year()
+  const start = dayjs(startDate).year()
+  const end = dayjs(endDate).year()
   if (start === end) {
     return `${start}年`
   } else {
