@@ -3,6 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
 
+  plugins: [{ src: '~/plugins/bootstrap.ts', mode: 'client' }],
+
   css: [
     'assets/stylesheets/bootstrap.scss',
     'animate.css',
