@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: '坂本 鐘期',
+      title: '坂本鐘期 Portfolio',
       meta: [
         { charset: 'utf-8' },
         { name: 'robots', content: 'noindex,nofollow,noarchive' },
