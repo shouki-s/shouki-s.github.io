@@ -28,7 +28,6 @@ const scaleStyle = computed(() => {
 
 onMounted(() => {
   scale.value = getDesiredScale()
-  console.log(`The initial count is ${scale.value}.`)
   window.addEventListener('resize', getDesiredScale)
 })
 
