@@ -1,5 +1,7 @@
 # shouki-s.github.io
 
+[![Deploy Nuxt site to Pages](https://github.com/shouki-s/shouki-s.github.io/actions/workflows/github-pages.yml/badge.svg)](https://github.com/shouki-s/shouki-s.github.io/actions/workflows/github-pages.yml)
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
