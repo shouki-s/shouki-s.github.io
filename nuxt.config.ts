@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         { name: 'robots', content: 'noindex,nofollow,noarchive' },
         { name: 'description', content: '坂本 鐘期のポートフォリオ' },
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     },
   },
 })
