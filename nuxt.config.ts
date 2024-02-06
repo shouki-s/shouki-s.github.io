@@ -16,4 +16,10 @@ export default defineNuxtConfig({
       contentfulApikey: '',
     },
   },
+
+  app: {
+    head: {
+      meta: [{ name: 'robots', content: 'noindex,nofollow,noarchive' }],
+    },
+  },
 })
