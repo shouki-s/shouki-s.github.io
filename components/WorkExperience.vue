@@ -10,11 +10,11 @@
             <li><span class="placeholder col-10" /></li>
           </ul>
         </div>
-        <div class="d-flex flex-wrap gap-2">
+        <p class="d-flex flex-wrap gap-2">
           <span v-for="j in [5, 6, 8, 3, 10]" :key="j" class="badge dummy">
             <span class="placeholder" :style="`width: ${j}em`" />
           </span>
-        </div>
+        </p>
       </div>
     </div>
     <div v-for="{ fields, sys } in works" :key="sys.id">
@@ -23,7 +23,7 @@
       </h3>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="mdToHtml(fields.description)" />
-      <div class="d-flex flex-wrap gap-2">
+      <p class="d-flex flex-wrap gap-2 pb-2">
         <span
           v-for="skill in fields.skills"
           :key="skill.sys.id"
@@ -32,7 +32,7 @@
         >
           {{ skill.fields.name }}
         </span>
-      </div>
+      </p>
     </div>
   </div>
 </template>

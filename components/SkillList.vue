@@ -9,7 +9,7 @@
     </thead>
     <tbody v-if="loading">
       <!-- placeholder -->
-      <tr v-for="len in [7, 4, 5, 9, 6]" :key="len">
+      <tr v-for="len in [7, 4, 5, 9]" :key="len">
         <th scope="row"><span :class="`placeholder col-${len}`" /></th>
         <td class="rating text-center">
           <i v-for="i in 5" :key="i" class="bi bi-star" />
