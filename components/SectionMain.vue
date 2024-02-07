@@ -95,7 +95,7 @@
             <SkillList genre="framework" :max-months="maxMonths" />
           </div>
           <div>
-            <h3>OS/クラウド</h3>
+            <h3>OS / クラウド</h3>
             <SkillList genre="os" :max-months="maxMonths" />
           </div>
           <div>
