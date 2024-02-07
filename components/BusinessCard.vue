@@ -50,6 +50,7 @@ function getDesiredScale(): number {
 }
 .card-img-top {
   border-bottom: 16px solid $primary;
+  background-color: $primary;
 }
 .card-body {
   padding: 38px 38px 30px 38px;
