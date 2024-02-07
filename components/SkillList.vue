@@ -32,7 +32,10 @@
     <tbody v-else>
       <tr v-for="{ fields, sys } in skills" :key="sys.id">
         <th scope="row">{{ fields.name }}</th>
-        <td class="rating text-center">
+        <td
+          class="rating text-center"
+          :aria-label="`5段階評価で${fields.rate || 0}`"
+        >
           <i
             v-for="i in fields.rate || 0"
             :key="`${sys.id}_${i}`"
