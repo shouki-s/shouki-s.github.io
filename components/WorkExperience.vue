@@ -48,7 +48,7 @@ const works = ref([]) as Ref<WorkEntry[]>
 const intersected = ref(false)
 const loading = ref(true)
 
-// ローディングを見えたいので画面に入ってからfetch開始
+// ローディングを見せたいので画面に入ってからfetch開始
 async function onIntersection([
   { isIntersecting },
 ]: IntersectionObserverEntry[]): Promise<void> {
