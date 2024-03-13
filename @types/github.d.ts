@@ -3,12 +3,10 @@ export type Contributions = {
     contributionsCollection: {
       contributionCalendar: {
         weeks: {
-          contributionDays: [
-            {
-              date: string
-              contributionCount: number
-            },
-          ]
+          contributionDays: {
+            date: string
+            contributionCount: number
+          }[]
         }[]
       }
     }
