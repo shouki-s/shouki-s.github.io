@@ -4,11 +4,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "dev": "pnpm contribution-calendar && nuxt dev",
+    "generate": "pnpm contribution-calendar && nuxt generate",
+    "preview": "pnpm contribution-calendar && nuxt preview",
     "postinstall": "nuxt prepare",
+    "contribution-calendar": "tsc ./scripts/contribution-calendar.ts && node ./scripts/contribution-calendar.js",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
