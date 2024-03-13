@@ -30,26 +30,38 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
-    v-if="contributionCalendar"
-    class="d-flex flex-row-reverse overflow-x-scroll"
-  >
-    <div
-      v-for="(week, i) in contributionCalendar.weeks"
-      :key="i"
-      class="d-flex flex-column"
-    >
+  <div v-if="contributionCalendar" class="card p-3">
+    <p>
+      {{ contributionCalendar.totalContributions.toLocaleString() }}
+      contributions in the last year
+    </p>
+    <div class="d-flex flex-row-reverse overflow-x-scroll">
       <div
-        v-for="{ date, contributionCount } in week.contributionDays"
-        :key="date"
-        class="day"
-        :title="`${date}: ${contributionCount}`"
+        v-for="(week, i) in contributionCalendar.weeks"
+        :key="i"
+        class="d-flex flex-column"
       >
         <div
-          class="kusa"
-          :class="`kusa-${Math.ceil((contributionCount * 4) / contributionMax)}`"
-        />
+          v-for="{ date, contributionCount } in week.contributionDays"
+          :key="date"
+          class="day"
+          :title="`${date}: ${contributionCount}`"
+        >
+          <div
+            class="kusa"
+            :class="`kusa-${Math.ceil((contributionCount * 4) / contributionMax)}`"
+          />
+        </div>
       </div>
+    </div>
+    <div
+      class="d-flex inline-flex align-items-center justify-content-end my-2 mx-4"
+    >
+      <span class="text-secondary small mx-1">Less</span>
+      <div v-for="i in 5" :key="i" class="day">
+        <div class="kusa" :class="`kusa-${i - 1}`" />
+      </div>
+      <span class="text-secondary small mx-1">More</span>
     </div>
   </div>
 </template>
@@ -58,7 +70,10 @@ onMounted(async () => {
 .day {
   background-color: rgb(235, 237, 240);
   margin: 2px;
-  border-radius: 1px;
+  border-radius: 3px;
+  outline: solid 1px rgba(27, 31, 35, 0.06);
+  outline-offset: -1px;
+
   .kusa {
     height: 10px;
     width: 10px;
