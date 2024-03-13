@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import dayjs from 'dayjs'
+
+const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
+const maxMonths = ref(100)
+
+onMounted(async () => {
+  maxMonths.value = await getMaxMonthsOfSkillsExp()
+})
+</script>
+
 <template>
   <div class="text-section">
     <NavBar />
@@ -10,6 +21,7 @@
           1984年生まれ、{{ age }}歳。<br />
           フリーランス［システムエンジニア／プログラマー］。
         </p>
+        <ContributionCalendar class="my-3" />
         <p class="links d-flex gap-1">
           <a
             class="btn btn-light p-1"
@@ -141,17 +153,6 @@
     <SectionFooter />
   </div>
 </template>
-
-<script setup lang="ts">
-import dayjs from 'dayjs'
-
-const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
-const maxMonths = ref(100)
-
-onMounted(async () => {
-  maxMonths.value = await getMaxMonthsOfSkillsExp()
-})
-</script>
 
 <style lang="scss" scoped>
 .text-section {
