@@ -8,7 +8,7 @@
     "generate": "pnpm contribution-calendar && nuxt generate",
     "preview": "pnpm contribution-calendar && nuxt preview",
     "postinstall": "nuxt prepare",
-    "contribution-calendar": "tsc ./scripts/contribution-calendar.ts && node ./scripts/contribution-calendar.js",
+    "contribution-calendar": "tsx ./scripts/contribution-calendar.ts",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +28,7 @@
     "@nuxtjs/eslint-module": "^4.1.0",
     "@vueuse/core": "^10.8.0",
     "@vueuse/nuxt": "^10.8.0",
+    "dotenv": "^16.4.5",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -36,6 +37,7 @@
     "octokit": "^3.1.2",
     "prettier": "^3.2.5",
     "sass": "^1.71.1",
+    "tsx": "^4.7.1",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"
   }
