@@ -1,24 +1,3 @@
-<template>
-  <div
-    class="card shadow animate__animated animate__fadeInDown"
-    :style="scaleStyle"
-  >
-    <img src="assets/images/kanagawaoki.png" class="card-img-top" />
-    <div class="card-body d-flex flex-column justify-content-between">
-      <span class="job-title">
-        フリーランス<br />
-        システムエンジニア／プログラマー
-      </span>
-      <div class="card-title d-inline-flex align-items-end">
-        <h1 class="">坂本 鐘期</h1>
-        <span class="roman">Shouki SAKAMOTO</span>
-      </div>
-      <div class="spacer" />
-      <span>システム開発全般を承ります</span>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 const scale = ref(0.00001)
 
@@ -40,6 +19,27 @@ function getDesiredScale(): number {
   return Math.min(window.innerWidth * 0.95, 363) / 726
 }
 </script>
+
+<template>
+  <div
+    class="card shadow animate__animated animate__fadeInDown"
+    :style="scaleStyle"
+  >
+    <img src="assets/images/kanagawaoki.png" class="card-img-top" />
+    <div class="card-body d-flex flex-column justify-content-between">
+      <span class="job-title">
+        フリーランス<br />
+        システムエンジニア／プログラマー
+      </span>
+      <div class="card-title d-inline-flex align-items-end">
+        <h1 class="">坂本 鐘期</h1>
+        <span class="roman">Shouki SAKAMOTO</span>
+      </div>
+      <div class="spacer" />
+      <span>システム開発全般を承ります</span>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 @import '~/assets/stylesheets/variables.scss';

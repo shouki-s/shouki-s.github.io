@@ -1,3 +1,36 @@
+<script setup lang="ts">
+import type { SkillEntry } from '~/@types/contentful'
+import sleep from 'sleep-promise'
+import { vIntersectionObserver } from '@vueuse/components'
+
+const props = defineProps<{
+  genre: string
+  maxMonths: number
+}>()
+
+const skills: Ref<SkillEntry[]> = ref([])
+const intersected = ref(false)
+const loading = ref(true)
+
+// ローディングを見せたいので画面に入ってからfetch開始
+async function onIntersection([
+  { isIntersecting },
+]: IntersectionObserverEntry[]): Promise<void> {
+  if (!isIntersecting || intersected.value) {
+    return
+  }
+  intersected.value = true
+
+  loading.value = true
+  try {
+    await sleep(200) // ローディングを見せたいのであえてスリープ
+    skills.value = await fetchSkills(props.genre)
+  } finally {
+    loading.value = false
+  }
+}
+</script>
+
 <template>
   <table v-intersection-observer="onIntersection" class="table table-striped">
     <thead>
@@ -69,39 +102,6 @@
     </tbody>
   </table>
 </template>
-
-<script setup lang="ts">
-import type { SkillEntry } from '~/@types/contentful'
-import sleep from 'sleep-promise'
-import { vIntersectionObserver } from '@vueuse/components'
-
-const props = defineProps<{
-  genre: string
-  maxMonths: number
-}>()
-
-const skills: Ref<SkillEntry[]> = ref([])
-const intersected = ref(false)
-const loading = ref(true)
-
-// ローディングを見せたいので画面に入ってからfetch開始
-async function onIntersection([
-  { isIntersecting },
-]: IntersectionObserverEntry[]): Promise<void> {
-  if (!isIntersecting || intersected.value) {
-    return
-  }
-  intersected.value = true
-
-  loading.value = true
-  try {
-    await sleep(200) // ローディングを見せたいのであえてスリープ
-    skills.value = await fetchSkills(props.genre)
-  } finally {
-    loading.value = false
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .rating {

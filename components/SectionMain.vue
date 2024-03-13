@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import dayjs from 'dayjs'
+
+const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
+const maxMonths = ref(100)
+
+onMounted(async () => {
+  maxMonths.value = await getMaxMonthsOfSkillsExp()
+})
+</script>
+
 <template>
   <div class="text-section">
     <NavBar />
@@ -141,17 +152,6 @@
     <SectionFooter />
   </div>
 </template>
-
-<script setup lang="ts">
-import dayjs from 'dayjs'
-
-const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
-const maxMonths = ref(100)
-
-onMounted(async () => {
-  maxMonths.value = await getMaxMonthsOfSkillsExp()
-})
-</script>
 
 <style lang="scss" scoped>
 .text-section {
