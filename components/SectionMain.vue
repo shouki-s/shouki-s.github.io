@@ -21,6 +21,7 @@ onMounted(async () => {
           1984年生まれ、{{ age }}歳。<br />
           フリーランス［システムエンジニア／プログラマー］。
         </p>
+        <ContributionCalendar class="my-1" />
         <p class="links d-flex gap-1">
           <a
             class="btn btn-light p-1"
