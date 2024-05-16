@@ -35,7 +35,7 @@ onMounted(async () => {
       {{ contributionCalendar.totalContributions.toLocaleString() }}
       contributions in the last year
     </p>
-    <div class="d-flex flex-row-reverse overflow-x-scroll">
+    <div class="d-flex flex-row overflow-x-scroll">
       <div
         v-for="(week, i) in contributionCalendar.weeks"
         :key="i"
