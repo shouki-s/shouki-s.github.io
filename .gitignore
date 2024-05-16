@@ -19,3 +19,5 @@ logs
 .idea
 
 public/contribution-calendar.json
+
+.env.local
