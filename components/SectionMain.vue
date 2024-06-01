@@ -24,7 +24,7 @@ onMounted(async () => {
         <div class="my-3 d-flex justify-content-center">
           <ContributionCalendar />
         </div>
-        <p class="links d-flex gap-1">
+        <p class="links d-flex gap-1 align-items-center">
           <a
             class="btn btn-light p-1"
             href="https://www.linkedin.com/in/shoukisakamoto/"
@@ -67,7 +67,19 @@ onMounted(async () => {
               alt="Qiita"
             />
           </a>
+          <a href="https://atcoder.jp/users/shoukis?contestType=algo">
+            <img
+              src="https://badgen.org/img/atcoder/shoukis/rating/algorithm?style=for-the-badge&label=AtCoder"
+              alt="AtCoder"
+            />
+          </a>
         </p>
+        <div class="text-sm">
+          <p class="d-flex gap-2 align-items-center">
+            <span class="badge bg-secondary">2024/06/01</span>
+            <a href="https://atcoder.jp/">AtCoder</a> 緑コーダーになりました！
+          </p>
+        </div>
       </section>
 
       <section>
