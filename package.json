@@ -1,6 +1,6 @@
 {
   "name": "shouki-s.github.io",
-  "author": "",
+  "author": "Shouki SAKAMOTO <32442796+shouki-s@users.noreply.github.com>",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -32,7 +32,7 @@
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.3",
-    "nuxt": "^3.16.0",
+    "nuxt": "^3.16.2",
     "nuxt-gtag": "^1.2.1",
     "octokit": "^3.2.1",
     "prettier": "^3.5.3",
