@@ -20,4 +20,5 @@ logs
 
 public/contribution-calendar.json
 
+.env
 .env.local

@@ -64,6 +64,10 @@ jobs:
       - name: Static HTML export with Nuxt
         run: pnpm run generate
         env:
+          NUXT_PUBLIC_CONTENTFUL_SPACE_ID: ${{ vars.NUXT_PUBLIC_CONTENTFUL_SPACE_ID }}
+          NUXT_PUBLIC_CONTENTFUL_ENVIRONMENT: ${{ vars.NUXT_PUBLIC_CONTENTFUL_ENVIRONMENT }}
+          NUXT_PUBLIC_CONTENTFUL_APIKEY: ${{ vars.NUXT_PUBLIC_CONTENTFUL_APIKEY }}
+          NUXT_PUBLIC_GTAG_ID: ${{ vars.NUXT_PUBLIC_GTAG_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
