@@ -3,6 +3,7 @@
   "author": "Shouki SAKAMOTO <32442796+shouki-s@users.noreply.github.com>",
   "license": "MIT",
   "type": "module",
+  "packageManager": "pnpm@10.28.0",
   "scripts": {
     "dev": "pnpm contribution-calendar && nuxt dev",
     "generate": "pnpm contribution-calendar && nuxt generate",
