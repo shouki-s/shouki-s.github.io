@@ -1,4 +1,4 @@
-import { EntryFieldTypes } from 'contentful'
+import type { EntryFieldTypes } from 'contentful'
 
 type SkillSkeleton = {
   contentTypeId: 'skill'
