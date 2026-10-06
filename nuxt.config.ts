@@ -5,6 +5,17 @@ export default defineNuxtConfig({
 
   modules: ['nuxt-gtag', '@vueuse/nuxt'],
 
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // Bootstrap 5.3 still uses @import; silence deprecation noise from node_modules
+          quietDeps: true,
+        },
+      },
+    },
+  },
+
   css: [
     'assets/stylesheets/bootstrap.scss',
     'animate.css',
