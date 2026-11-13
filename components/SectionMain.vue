@@ -107,15 +107,7 @@ onMounted(async () => {
 
       <section>
         <h2 id="products">作ったもの</h2>
-        <h3>
-          <a href="https://fairyboard.app" target="_blank" rel="noopener">
-            Fairyboard
-          </a>
-        </h3>
-        <p>
-          ボードゲームの盤面をWebで共有できるシステム。<br />
-          離れた場所にいる人とも、同じ盤面を見ながらボードゲームを楽しめます。
-        </p>
+        <ProductList />
       </section>
 
       <section>

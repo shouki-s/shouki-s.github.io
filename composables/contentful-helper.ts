@@ -1,5 +1,7 @@
 import * as contentful from 'contentful'
 import type {
+  ProductEntry,
+  ProductSkeleton,
   SkillEntry,
   SkillSkeleton,
   WorkEntry,
@@ -42,6 +44,15 @@ export async function fetchWorks(): Promise<WorkEntry[]> {
   const { items } = await contentfulClient.getEntries<WorkSkeleton>({
     content_type: 'work',
     order: ['-fields.endDate'],
+  })
+  return items
+}
+
+export async function fetchProducts(): Promise<ProductEntry[]> {
+  const contentfulClient = getContentfulClient()
+  const { items } = await contentfulClient.getEntries<ProductSkeleton>({
+    content_type: 'product',
+    order: ['-fields.releaseDate'],
   })
   return items
 }
