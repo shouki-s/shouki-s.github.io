@@ -1,0 +1,26 @@
+# https://docs.github.com/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # 公開直後に乗っ取られたパッケージを掴まないよう、公開から一定期間待つ
+    # （セキュリティ更新はこの待ち時間の対象外）
+    cooldown:
+      default-days: 7
+    groups:
+      # マイナー・パッチ更新は1本の PR にまとめる。メジャー更新は個別に届く
+      npm-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns:
+          - '*'

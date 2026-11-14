@@ -14,9 +14,9 @@ const loading = ref(true)
 
 // ローディングを見せたいので画面に入ってからfetch開始
 async function onIntersection([
-  { isIntersecting },
+  entry,
 ]: IntersectionObserverEntry[]): Promise<void> {
-  if (!isIntersecting || intersected.value) {
+  if (!entry?.isIntersecting || intersected.value) {
     return
   }
   intersected.value = true
