@@ -68,38 +68,18 @@ function mdToHtml(md: string): string {
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="mdToHtml(fields.description)" />
       <p class="d-flex flex-wrap gap-2 pb-2">
-        <span
+        <SkillBadge
           v-for="skill in fields.skills"
           :key="skill.sys.id"
-          class="badge"
-          :class="skill.fields.genre"
-        >
-          {{ skill.fields.name }}
-        </span>
+          :skill="skill"
+        />
       </p>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.badge {
-  &.language {
-    background-color: #1e88e5;
-  }
-  &.framework {
-    background-color: #0097a7;
-  }
-  &.os {
-    background-color: #9e9d24;
-  }
-  &.tool {
-    background-color: #ff6f00;
-  }
-  &.process {
-    background-color: #d32f2f;
-  }
-  &.dummy {
-    background-color: #999;
-  }
+.badge.dummy {
+  background-color: #999;
 }
 </style>

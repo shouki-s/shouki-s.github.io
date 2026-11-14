@@ -43,6 +43,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#products">
+              作ったもの
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#skills">スキル</a>
           </li>
           <li class="nav-item">

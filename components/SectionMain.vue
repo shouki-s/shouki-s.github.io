@@ -106,6 +106,11 @@ onMounted(async () => {
       </section>
 
       <section>
+        <h2 id="products">作ったもの</h2>
+        <ProductList />
+      </section>
+
+      <section>
         <h2 id="skills">スキル</h2>
         <p>
           技術オタクなので新しい言語やフレームワークを触るのは大好きです。<br />

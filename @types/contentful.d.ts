@@ -26,3 +26,17 @@ type WorkSkeleton = {
 }
 
 type WorkEntry = Entry<WorkSkeleton, undefined, string>
+
+type ProductSkeleton = {
+  contentTypeId: 'product'
+  fields: {
+    name: EntryFieldTypes.Text
+    url?: EntryFieldTypes.Text
+    image?: EntryFieldTypes.AssetLink
+    releaseDate?: EntryFieldTypes.Date
+    description?: EntryFieldTypes.Text
+    skills?: EntryFieldTypes.Array<SkillEntry>
+  }
+}
+
+type ProductEntry = Entry<ProductSkeleton, undefined, string>
