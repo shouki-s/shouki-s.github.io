@@ -1,0 +1,45 @@
+# Lint, type-check and build every pull request, so a broken change is
+# caught before it reaches main and the deploy workflow.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      # Must run before setup-node: its pnpm cache calls `pnpm store path`.
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Lint
+        run: pnpm lint
+      - name: Type-check
+        run: pnpm typecheck
+      - name: Build
+        run: pnpm run generate
+        env:
+          # Used by scripts/contribution-calendar.ts to read public contribution data
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
