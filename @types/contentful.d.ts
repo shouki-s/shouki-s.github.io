@@ -32,6 +32,7 @@ type ProductSkeleton = {
   fields: {
     name: EntryFieldTypes.Text
     url?: EntryFieldTypes.Text
+    image?: EntryFieldTypes.AssetLink
     releaseDate?: EntryFieldTypes.Date
     description?: EntryFieldTypes.Text
     skills?: EntryFieldTypes.Array<SkillEntry>
