@@ -158,7 +158,7 @@ const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
       <section>
         <h2 id="about-site">このサイトについて</h2>
         <ul>
-          <li>Vue.js(v3) + Nuxt.js(v3)</li>
+          <li>Vue.js(v3) + Nuxt.js(v4)</li>
           <li>Contentful APIでデータを取得したり</li>
           <li>ちょっと楽しくなって、animationとかtransitionとか使ったり</li>
         </ul>
