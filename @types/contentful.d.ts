@@ -1,4 +1,4 @@
-import type { EntryFieldTypes } from 'contentful'
+import type { Entry, EntryFieldTypes } from 'contentful'
 
 type SkillSkeleton = {
   contentTypeId: 'skill'
@@ -21,7 +21,7 @@ type WorkSkeleton = {
     startDate: EntryFieldTypes.Date
     endDate: EntryFieldTypes.Date
     description?: EntryFieldTypes.Text
-    skills: EntryFieldTypes.Array<SkillEntry>
+    skills: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<SkillSkeleton>>
   }
 }
 
@@ -35,7 +35,7 @@ type ProductSkeleton = {
     image?: EntryFieldTypes.AssetLink
     releaseDate?: EntryFieldTypes.Date
     description?: EntryFieldTypes.Text
-    skills?: EntryFieldTypes.Array<SkillEntry>
+    skills?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<SkillSkeleton>>
   }
 }
 
