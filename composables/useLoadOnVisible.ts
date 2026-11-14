@@ -10,13 +10,14 @@ export function useLoadOnVisible<T>(
   load: () => Promise<T>,
   initial: T,
 ): { data: Ref<T>; loading: Ref<boolean>; error: Ref<unknown> } {
-  // Contentful のエントリは循環参照を含みうるので、中身まではリアクティブにしない
+  // 読み込んだ結果は丸ごと差し替えるだけで中身は書き換えないので、深いリアクティブ化は不要
   const data = shallowRef(initial)
   const loading = ref(true)
   const error = shallowRef<unknown>(null)
 
-  const { stop } = useIntersectionObserver(target, async ([entry]) => {
-    if (!entry?.isIntersecting) {
+  // 1回の通知に同じ要素の変化が複数まとめて届くことがあるので、すべて見る
+  const { stop } = useIntersectionObserver(target, async (entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) {
       return
     }
     stop()
