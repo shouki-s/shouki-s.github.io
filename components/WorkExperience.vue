@@ -1,31 +1,13 @@
 <script setup lang="ts">
 import type { WorkEntry } from '~/@types/contentful'
 import dayjs from 'dayjs'
-import { marked } from 'marked'
-import sleep from 'sleep-promise'
-import { vIntersectionObserver } from '@vueuse/components'
 
-const works = ref([]) as Ref<WorkEntry[]>
-const intersected = ref(false)
-const loading = ref(true)
-
-// ローディングを見せたいので画面に入ってからfetch開始
-async function onIntersection([
-  entry,
-]: IntersectionObserverEntry[]): Promise<void> {
-  if (!entry?.isIntersecting || intersected.value) {
-    return
-  }
-  intersected.value = true
-
-  loading.value = true
-  try {
-    await sleep(200) // ローディングを見せたいのであえてスリープ
-    works.value = await fetchWorks()
-  } finally {
-    loading.value = false
-  }
-}
+// ローディングを見せたいので画面に入ってから読み込む
+const {
+  data: works,
+  loading,
+  error,
+} = useLoadOnVisible<WorkEntry[]>(useTemplateRef('root'), fetchWorks, [])
 
 function getYears(startDate: string, endDate: string): string {
   const start = dayjs(startDate).year()
@@ -36,15 +18,12 @@ function getYears(startDate: string, endDate: string): string {
     return `${start}年〜${end}年`
   }
 }
-
-function mdToHtml(md: string): string {
-  return marked.parse(md) as string
-}
 </script>
 
 <template>
-  <div v-intersection-observer="onIntersection">
-    <div v-if="loading">
+  <div ref="root">
+    <LoadError v-if="error" />
+    <div v-else-if="loading">
       <div v-for="i in 2" :key="i">
         <h3><span class="placeholder col-7" /></h3>
         <div>

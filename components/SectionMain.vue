@@ -2,11 +2,6 @@
 import dayjs from 'dayjs'
 
 const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
-const maxMonths = ref(100)
-
-onMounted(async () => {
-  maxMonths.value = await getMaxMonthsOfSkillsExp()
-})
 </script>
 
 <template>
@@ -119,23 +114,23 @@ onMounted(async () => {
         <div class="row row-cols-1 row-cols-lg-2">
           <div>
             <h3>プログラミング言語</h3>
-            <SkillList genre="language" :max-months="maxMonths" />
+            <SkillList genre="language" />
           </div>
           <div>
             <h3>フレームワーク</h3>
-            <SkillList genre="framework" :max-months="maxMonths" />
+            <SkillList genre="framework" />
           </div>
           <div>
             <h3>OS / クラウド</h3>
-            <SkillList genre="os" :max-months="maxMonths" />
+            <SkillList genre="os" />
           </div>
           <div>
             <h3>開発ツール</h3>
-            <SkillList genre="tool" :max-months="maxMonths" />
+            <SkillList genre="tool" />
           </div>
           <div>
             <h3>開発プロセス</h3>
-            <SkillList genre="process" :max-months="maxMonths" />
+            <SkillList genre="process" />
           </div>
         </div>
       </section>

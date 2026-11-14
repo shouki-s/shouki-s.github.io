@@ -1,38 +1,27 @@
 <script setup lang="ts">
 import type { SkillEntry } from '~/@types/contentful'
-import sleep from 'sleep-promise'
-import { vIntersectionObserver } from '@vueuse/components'
 
 const props = defineProps<{
   genre: string
-  maxMonths: number
 }>()
 
-const skills: Ref<SkillEntry[]> = ref([])
-const intersected = ref(false)
-const loading = ref(true)
-
-// ローディングを見せたいので画面に入ってからfetch開始
-async function onIntersection([
-  entry,
-]: IntersectionObserverEntry[]): Promise<void> {
-  if (!entry?.isIntersecting || intersected.value) {
-    return
-  }
-  intersected.value = true
-
-  loading.value = true
-  try {
-    await sleep(200) // ローディングを見せたいのであえてスリープ
-    skills.value = await fetchSkills(props.genre)
-  } finally {
-    loading.value = false
-  }
-}
+// ローディングを見せたいので画面に入ってから読み込む。
+// 全ジャンルの表が同じ1回の取得結果を使う
+const { data, loading, error } = useLoadOnVisible<{
+  skills: SkillEntry[]
+  maxMonths: number
+}>(
+  useTemplateRef('root'),
+  async () => ({
+    skills: await fetchSkills(props.genre),
+    maxMonths: await getMaxMonthsOfSkillsExp(),
+  }),
+  { skills: [], maxMonths: 100 },
+)
 </script>
 
 <template>
-  <table v-intersection-observer="onIntersection" class="table table-striped">
+  <table ref="root" class="table table-striped">
     <thead>
       <tr>
         <th scope="col" />
@@ -62,8 +51,13 @@ async function onIntersection([
         </td>
       </tr>
     </tbody>
+    <tbody v-else-if="error">
+      <tr>
+        <td colspan="3"><LoadError /></td>
+      </tr>
+    </tbody>
     <tbody v-else>
-      <tr v-for="{ fields, sys } in skills" :key="sys.id">
+      <tr v-for="{ fields, sys } in data.skills" :key="sys.id">
         <th scope="row">{{ fields.name }}</th>
         <td
           class="rating text-center"
@@ -86,14 +80,14 @@ async function onIntersection([
             class="progress"
             role="progressbar"
             :aria-label="fields.name"
-            :aria-valuenow="(fields.monthsOfExperience * 100) / maxMonths"
+            :aria-valuenow="(fields.monthsOfExperience * 100) / data.maxMonths"
             aria-valuemin="0"
             aria-valuemax="100"
             style="height: 1px"
           >
             <div
               class="progress-bar"
-              :style="`width: ${(fields.monthsOfExperience * 100) / maxMonths}%`"
+              :style="`width: ${(fields.monthsOfExperience * 100) / data.maxMonths}%`"
             ></div>
           </div>
         </td>
