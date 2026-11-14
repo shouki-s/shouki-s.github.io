@@ -18,6 +18,16 @@ function getContentfulClient(): contentful.ContentfulClientApi<undefined> {
   return contentfulClient
 }
 
+/**
+ * リンク先のエントリのうち、解決できたものだけを返す。
+ * 非公開・削除済みのエントリへのリンクは `fields` を持たないリンクのまま返ってくるため除く。
+ */
+export function resolvedEntries<T extends { fields: unknown }>(
+  items: (T | contentful.UnresolvedLink<'Entry'>)[] | undefined,
+): T[] {
+  return (items ?? []).filter((item): item is T => 'fields' in item)
+}
+
 export async function fetchSkills(genre: string): Promise<SkillEntry[]> {
   const contentfulClient = getContentfulClient()
   const { items } = await contentfulClient.getEntries<SkillSkeleton>({

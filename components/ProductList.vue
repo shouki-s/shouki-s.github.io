@@ -11,9 +11,9 @@ const loading = ref(true)
 
 // ローディングを見せたいので画面に入ってからfetch開始
 async function onIntersection([
-  { isIntersecting },
+  entry,
 ]: IntersectionObserverEntry[]): Promise<void> {
-  if (!isIntersecting || intersected.value) {
+  if (!entry?.isIntersecting || intersected.value) {
     return
   }
   intersected.value = true
@@ -88,9 +88,12 @@ function imageUrl(
         </h3>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div v-if="fields.description" v-html="mdToHtml(fields.description)" />
-        <p v-if="fields.skills?.length" class="d-flex flex-wrap gap-2">
+        <p
+          v-if="resolvedEntries(fields.skills).length"
+          class="d-flex flex-wrap gap-2"
+        >
           <SkillBadge
-            v-for="skill in fields.skills"
+            v-for="skill in resolvedEntries(fields.skills)"
             :key="skill.sys.id"
             :skill="skill"
           />
