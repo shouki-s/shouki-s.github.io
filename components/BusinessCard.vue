@@ -1,23 +1,11 @@
 <script setup lang="ts">
-const scale = ref(0.00001)
+// リサイズや端末の回転に合わせて更新される
+const { width } = useWindowSize()
 
-const scaleStyle = computed(() => {
-  return `scale: ${scale.value}`
-})
-
-onMounted(() => {
-  scale.value = getDesiredScale()
-  window.addEventListener('resize', getDesiredScale)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', getDesiredScale)
-})
-
-/** 横幅を拡縮するためのスケールを計算する */
-function getDesiredScale(): number {
-  return Math.min(window.innerWidth * 0.95, 363) / 726
-}
+/** 横幅を拡縮するためのスケール */
+const scaleStyle = computed(
+  () => `scale: ${Math.min(width.value * 0.95, 363) / 726}`,
+)
 </script>
 
 <template>
