@@ -74,7 +74,8 @@ function imageUrl(
         </component>
       </div>
       <div :class="imageUrl(fields.image) ? 'col-md-8' : 'col-12'">
-        <h3>
+        <!-- 画像と横並びのときは上端を揃える -->
+        <h3 :class="{ 'mt-md-0': imageUrl(fields.image) }">
           <a
             v-if="fields.url"
             :href="fields.url"
