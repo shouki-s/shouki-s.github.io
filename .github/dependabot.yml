@@ -9,8 +9,14 @@ updates:
     # （セキュリティ更新はこの待ち時間の対象外）
     cooldown:
       default-days: 7
+    # メジャー更新は移行作業が要るので、提案させずに手で計画して上げる
+    # （update-types での除外はバージョン更新だけに効き、セキュリティ更新は届く）
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
     groups:
-      # マイナー・パッチ更新は1本の PR にまとめる。メジャー更新は個別に届く
+      # マイナー・パッチ更新は1本の PR にまとめる
       npm-minor-and-patch:
         update-types:
           - minor
