@@ -5,9 +5,9 @@
   "type": "module",
   "packageManager": "pnpm@10.28.0",
   "scripts": {
-    "dev": "pnpm contribution-calendar && nuxt dev",
+    "dev": "pnpm contribution-calendar --optional && nuxt dev",
     "generate": "pnpm contribution-calendar && nuxt generate",
-    "preview": "pnpm contribution-calendar && nuxt preview",
+    "preview": "pnpm contribution-calendar --optional && nuxt preview",
     "postinstall": "nuxt prepare",
     "contribution-calendar": "tsx ./scripts/contribution-calendar.ts",
     "lint": "eslint .",

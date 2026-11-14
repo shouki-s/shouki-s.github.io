@@ -21,8 +21,13 @@ const contributionMax = computed<number>(() => {
 onMounted(async () => {
   loading.value = true
   try {
+    // トークンなしで開発サーバーを起動したときはファイルがないので、表示しない
     const response = await fetch('contribution-calendar.json')
-    contributionCalendar.value = await response.json()
+    if (response.ok) {
+      contributionCalendar.value = await response.json()
+    }
+  } catch (e) {
+    console.error(e)
   } finally {
     loading.value = false
   }
