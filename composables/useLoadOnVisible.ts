@@ -1,3 +1,5 @@
+import sleep from 'sleep-promise'
+
 /** ローディング表示を見せるため、読み込みを始める前にあえて待つ時間 */
 const LOADING_DELAY_MS = 200
 
@@ -22,7 +24,7 @@ export function useLoadOnVisible<T>(
     }
     stop()
     try {
-      await new Promise((resolve) => setTimeout(resolve, LOADING_DELAY_MS))
+      await sleep(LOADING_DELAY_MS)
       data.value = await load()
     } catch (e) {
       console.error(e)

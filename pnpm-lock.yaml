@@ -26,6 +26,9 @@ importers:
       marked:
         specifier: ^18.2.0
         version: 18.2.0
+      sleep-promise:
+        specifier: ^9.1.0
+        version: 9.1.0
       vue3-scroll-spy:
         specifier: ^1.0.8
         version: 1.0.8(typescript@6.0.3)
@@ -3693,6 +3696,9 @@ packages:
   slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
+
+  sleep-promise@9.1.0:
+    resolution: {integrity: sha512-UHYzVpz9Xn8b+jikYSD6bqvf754xL2uBUzDFwiU6NcdZeifPr6UfgU43xpkPu67VMS88+TI2PSI7Eohgqf2fKA==}
 
   smob@1.6.2:
     resolution: {integrity: sha512-RQsvleCbF8cVHEv+xuDGaA4pOizFqJ0GgjtMSRo6oP8pnN7WsigHgVGey6aILRBKv4W2YOMHLqbKdnB6hpB9fw==}
@@ -8428,6 +8434,8 @@ snapshots:
   sisteransi@2.0.0: {}
 
   slash@5.1.0: {}
+
+  sleep-promise@9.1.0: {}
 
   smob@1.6.2: {}
 
