@@ -1,16 +1,8 @@
-<script setup lang="ts">
-// 公開した年から今年まで
-const FIRST_YEAR = 2024
-const thisYear = new Date().getFullYear()
-const years =
-  thisYear > FIRST_YEAR ? `${FIRST_YEAR}–${thisYear}` : `${FIRST_YEAR}`
-</script>
-
 <template>
   <footer
     class="text-secondary-emphasis bg-body-secondary d-flex justify-content-center align-items-center"
   >
-    &copy; {{ years }} Shouki SAKAMOTO
+    &copy; 2024 Shouki SAKAMOTO
   </footer>
 </template>
 
