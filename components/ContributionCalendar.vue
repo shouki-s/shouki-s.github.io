@@ -21,8 +21,17 @@ const contributionMax = computed<number>(() => {
 onMounted(async () => {
   loading.value = true
   try {
+    // トークンなしで開発サーバーを起動したときはファイルがないので、表示しない。
+    // ないファイルを開発サーバーは SPA の HTML（200）で、GitHub Pages は 404 で返す
     const response = await fetch('contribution-calendar.json')
-    contributionCalendar.value = await response.json()
+    const isJson = response.headers
+      .get('content-type')
+      ?.includes('application/json')
+    if (response.ok && isJson) {
+      contributionCalendar.value = await response.json()
+    }
+  } catch (e) {
+    console.error(e)
   } finally {
     loading.value = false
   }

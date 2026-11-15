@@ -1,35 +1,13 @@
 <script setup lang="ts">
 import type { Asset, UnresolvedLink } from 'contentful'
 import type { ProductEntry } from '~/@types/contentful'
-import { marked } from 'marked'
-import sleep from 'sleep-promise'
-import { vIntersectionObserver } from '@vueuse/components'
 
-const products = ref([]) as Ref<ProductEntry[]>
-const intersected = ref(false)
-const loading = ref(true)
-
-// ローディングを見せたいので画面に入ってからfetch開始
-async function onIntersection([
-  entry,
-]: IntersectionObserverEntry[]): Promise<void> {
-  if (!entry?.isIntersecting || intersected.value) {
-    return
-  }
-  intersected.value = true
-
-  loading.value = true
-  try {
-    await sleep(200) // ローディングを見せたいのであえてスリープ
-    products.value = await fetchProducts()
-  } finally {
-    loading.value = false
-  }
-}
-
-function mdToHtml(md: string): string {
-  return marked.parse(md) as string
-}
+// ローディングを見せたいので画面に入ってから読み込む
+const {
+  data: products,
+  loading,
+  error,
+} = useLoadOnVisible<ProductEntry[]>(useTemplateRef('root'), fetchProducts, [])
 
 // Contentful Images API で表示サイズに合わせて縮小・WebP化する
 function imageUrl(
@@ -43,8 +21,9 @@ function imageUrl(
 </script>
 
 <template>
-  <div v-intersection-observer="onIntersection">
-    <div v-if="loading" class="row g-3 mb-3">
+  <div ref="root">
+    <LoadError v-if="error" />
+    <div v-else-if="loading" class="row g-3 mb-3">
       <div class="col-md-4">
         <div class="ratio ratio-16x9 placeholder rounded" />
       </div>
