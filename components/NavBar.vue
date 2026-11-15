@@ -6,7 +6,7 @@
     <div class="container">
       <a class="navbar-brand" href="#">
         <img
-          src="assets/images/avatar.jpeg"
+          src="assets/images/avatar.webp"
           alt=""
           class="border border-secondary rounded-circle"
           width="30"
