@@ -43,3 +43,7 @@ jobs:
         env:
           # Used by scripts/contribution-calendar.ts to read public contribution data
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Playwright browser
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Smoke test
+        run: pnpm test

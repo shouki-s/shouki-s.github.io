@@ -28,15 +28,16 @@ cp .env.sample .env
 
 ## Commands
 
-| Command          | What it does                                                                                                            |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `pnpm dev`       | Starts the development server on <http://localhost:3000>. Without `GITHUB_TOKEN`, the contribution calendar is skipped. |
-| `pnpm generate`  | Builds the static site into `.output/public` (`dist` links to it).                                                      |
-| `pnpm lint`      | Runs ESLint, including Prettier formatting.                                                                             |
-| `pnpm typecheck` | Type-checks with `nuxt typecheck`.                                                                                      |
+| Command          | What it does                                                                                                                |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm dev`       | Starts the development server on <http://localhost:3000>. Without `GITHUB_TOKEN`, the contribution calendar is skipped.     |
+| `pnpm generate`  | Builds the static site into `.output/public` (`dist` links to it).                                                          |
+| `pnpm lint`      | Runs ESLint, including Prettier formatting.                                                                                 |
+| `pnpm typecheck` | Type-checks with `nuxt typecheck`.                                                                                          |
+| `pnpm test`      | Opens the built site in Playwright, with Contentful mocked, and checks that the sections render. Run `pnpm generate` first. |
 
 ## CI and deployment
 
-- `.github/workflows/ci.yml` runs lint, type-check and the build on every pull request and on `main`.
+- `.github/workflows/ci.yml` runs lint, type-check, the build and the smoke test on every pull request and on `main`.
 - `.github/workflows/github-pages.yml` builds and deploys to GitHub Pages on every push to `main`, and once a day so the contribution calendar stays current.
 - Dependabot opens weekly pull requests for npm minor and patch updates (grouped, 7 days after release) and for GitHub Actions. npm major updates are ignored and done by hand; security updates still arrive.
