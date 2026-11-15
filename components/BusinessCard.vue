@@ -30,7 +30,7 @@ const scaleStyle = computed(
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/stylesheets/variables.scss';
+@use '~/assets/stylesheets/variables.scss' as *;
 
 .card {
   width: 726px;

@@ -1,3 +1,9 @@
+// Bootstrap 5.3 is written for @import (its docs only show @import) and reads
+// the overrides below as global variables, so this file has to keep @import
+// until Bootstrap moves to modules. `@use './variables.scss' as *` is not a
+// replacement: the overrides are not global then, and Bootstrap can silently
+// stop seeing them.
+
 // Variable overrides first
 @import './variables.scss';
 

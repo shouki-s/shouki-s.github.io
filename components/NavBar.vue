@@ -61,7 +61,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/stylesheets/variables.scss';
+@use '~/assets/stylesheets/variables.scss' as *;
 
 .navbar {
   animation: fadeIn ease both;
