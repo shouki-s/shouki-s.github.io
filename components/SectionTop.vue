@@ -7,7 +7,7 @@
       class="button-next-wrapper animate__animated animate__fadeIn animate__delay-2s"
     >
       <a href="#profile" class="button-next btn btn-secondary">
-        <i class="bi bi-chevron-double-down" />
+        <BiIcon name="chevron-double-down" />
       </a>
     </div>
     <BusinessCard />

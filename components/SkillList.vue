@@ -34,7 +34,7 @@ const { data, loading, error } = useLoadOnVisible<{
       <tr v-for="len in [7, 4, 5, 9]" :key="len">
         <th scope="row"><span :class="`placeholder col-${len}`" /></th>
         <td class="rating text-center">
-          <i v-for="i in 5" :key="i" class="bi bi-star" />
+          <BiIcon v-for="i in 5" :key="i" name="star" />
         </td>
         <td class="exp">
           <div class="small"><span class="placeholder col-7" /></div>
@@ -63,15 +63,15 @@ const { data, loading, error } = useLoadOnVisible<{
           class="rating text-center"
           :aria-label="`5段階評価で${fields.rate || 0}`"
         >
-          <i
+          <BiIcon
             v-for="i in fields.rate || 0"
             :key="`${sys.id}_${i}`"
-            class="bi bi-star-fill"
+            name="star-fill"
           />
-          <i
+          <BiIcon
             v-for="i in 5 - (fields.rate || 0)"
             :key="`${sys.id}_${i}`"
-            class="bi bi-star"
+            name="star"
           />
         </td>
         <td v-if="fields.monthsOfExperience !== 0" class="exp">
