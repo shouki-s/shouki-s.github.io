@@ -13,7 +13,12 @@ const scaleStyle = computed(
     class="card shadow animate__animated animate__fadeInDown"
     :style="scaleStyle"
   >
-    <img src="assets/images/kanagawaoki.png" class="card-img-top" />
+    <!--
+      画像の左上の1ピクセル（角丸で隠れる）だけ、ごくわずかに透明にしてある。
+      完全に不透明な画像だと、Chrome は縮小したときに下端を枠線との境目の
+      ピクセルまで塗るので、境目の明るい線が太く見える
+    -->
+    <img src="assets/images/kanagawaoki.webp" alt="" class="card-img-top" />
     <div class="card-body d-flex flex-column justify-content-between">
       <span class="job-title">
         フリーランス<br />
@@ -30,7 +35,7 @@ const scaleStyle = computed(
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/stylesheets/variables.scss';
+@use '~/assets/stylesheets/variables.scss' as *;
 
 .card {
   width: 726px;

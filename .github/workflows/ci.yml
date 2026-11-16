@@ -43,3 +43,12 @@ jobs:
         env:
           # Used by scripts/contribution-calendar.ts to read public contribution data
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The smoke test mocks Contentful, but the client still refuses to
+          # start with empty settings, so give it placeholder values
+          NUXT_PUBLIC_CONTENTFUL_SPACE_ID: smoke-test
+          NUXT_PUBLIC_CONTENTFUL_ENVIRONMENT: master
+          NUXT_PUBLIC_CONTENTFUL_APIKEY: smoke-test
+      - name: Install Playwright browser
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Smoke test
+        run: pnpm test

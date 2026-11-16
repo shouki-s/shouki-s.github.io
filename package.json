@@ -3,7 +3,7 @@
   "author": "Shouki SAKAMOTO <32442796+shouki-s@users.noreply.github.com>",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@10.28.0",
+  "packageManager": "pnpm@10.34.9",
   "scripts": {
     "dev": "pnpm contribution-calendar --optional && nuxt dev",
     "generate": "pnpm contribution-calendar && nuxt generate",
@@ -12,7 +12,7 @@
     "contribution-calendar": "tsx ./scripts/contribution-calendar.ts",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.17.0",
+    "@playwright/test": "^1.65.0",
     "@vueuse/core": "^15.0.0",
     "@vueuse/nuxt": "^15.0.0",
     "dotenv": "^18.0.10",
@@ -37,6 +38,7 @@
     "octokit": "^5.0.5",
     "prettier": "^3.10.1",
     "sass": "^1.108.2",
+    "serve": "^14.2.8",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3",
     "vue": "^3.5.45",

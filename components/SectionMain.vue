@@ -28,7 +28,7 @@ const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
             aria-label="LinkedIn"
           >
             <img
-              src="assets/images/icons/linkedin.png"
+              src="assets/images/icons/linkedin.webp"
               width="32"
               height="32"
               alt="LinkedIn"
@@ -42,7 +42,7 @@ const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
             aria-label="Github"
           >
             <img
-              src="assets/images/icons/github.png"
+              src="assets/images/icons/github.webp"
               width="32"
               height="32"
               alt="GitHub"
@@ -56,7 +56,7 @@ const age = ref(dayjs().diff(dayjs('1984-10-23T00:00:00+09:00'), 'year'))
             aria-label="Qiita"
           >
             <img
-              src="assets/images/icons/qiita.png"
+              src="assets/images/icons/qiita.webp"
               width="32"
               height="32"
               alt="Qiita"

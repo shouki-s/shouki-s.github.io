@@ -1,6 +1,12 @@
+// Bootstrap 5.3 is written for @import (its docs only show @import), so this
+// file keeps @import until Bootstrap moves to modules.
+// `@use './variables.scss' as *` would also work today, but only because Dart
+// Sass runs an @import-ed file that has no @use of its own in this file's
+// scope. If a Bootstrap file ever adds a @use, the overrides below would be
+// silently ignored. With @import they keep working.
+
 // Variable overrides first
 @import './variables.scss';
 
 // Then import Bootstrap
 @import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons.css';

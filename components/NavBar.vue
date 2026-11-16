@@ -6,7 +6,8 @@
     <div class="container">
       <a class="navbar-brand" href="#">
         <img
-          src="assets/images/avatar.jpeg"
+          src="assets/images/avatar.webp"
+          alt=""
           class="border border-secondary rounded-circle"
           width="30"
           height="30"
@@ -30,38 +31,28 @@
           class="navbar-nav me-auto mb-2 mb-lg-0"
         >
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#profile">
-              プロフィール
-            </a>
+            <a class="nav-link" href="#profile"> プロフィール </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#career">来歴</a>
+            <a class="nav-link" href="#career">来歴</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#work-experience">
-              経験
-            </a>
+            <a class="nav-link" href="#work-experience"> 経験 </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#products">
-              作ったもの
-            </a>
+            <a class="nav-link" href="#products"> 作ったもの </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#skills">スキル</a>
+            <a class="nav-link" href="#skills">スキル</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#qualification">
-              資格
-            </a>
+            <a class="nav-link" href="#qualification"> 資格 </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#hobby">趣味</a>
+            <a class="nav-link" href="#hobby">趣味</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#about-site">
-              このサイトについて
-            </a>
+            <a class="nav-link" href="#about-site"> このサイトについて </a>
           </li>
         </ul>
       </div>
@@ -70,7 +61,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/stylesheets/variables.scss';
+@use '~/assets/stylesheets/variables.scss' as *;
 
 .navbar {
   animation: fadeIn ease both;
