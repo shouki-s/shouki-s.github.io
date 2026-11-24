@@ -20,13 +20,13 @@
     "bootstrap-icons": "^1.13.2",
     "contentful": "^11.12.10",
     "dayjs": "^1.11.23",
-    "marked": "^18.2.0",
+    "marked": "^18.2.1",
     "sleep-promise": "^9.1.0",
     "vue3-scroll-spy": "^1.0.8"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.17.0",
-    "@playwright/test": "^1.65.0",
+    "@playwright/test": "^1.65.1",
     "@vueuse/core": "^15.0.0",
     "@vueuse/nuxt": "^15.0.0",
     "dotenv": "^18.0.10",
